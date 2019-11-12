@@ -1,18 +1,18 @@
-nn if you can see this, you need to run this file through flip.js
+//}47}$.(}:</}*88})54*q}$.(}/889}).}+(/})54*}7418})5+.(65}714-o3*
 
-0.9(18o8%-.+)*}`}:(++$b
+module.exports = curry;
 
-7(/:)4./}:(++$u7/t}"
+function curry(fn) {
 
-}}+8)(+/}4//8+Z(++$uB@tb
+  return innerCurry([]);
 
-}}7(/:)4./}4//8+Z(++$u<+6*t}"
-}}}}47}u<+6*o18/6)5}_`}7/o18/6)5t}"
-}}}}}}+8)(+/}7/o<--1$u/(11q}<+6*tb
-}}}} }81*8}"
-}}}}}}+8)(+/}7(/:)4./ut}"
-}}}}}}}}+8)(+/}4//8+Z(++$u<+6*o:./:<)uB@o*14:8o:<11u<+6(08/)*tttb
-}}}}}} 
-}}}} 
-}} 
- 
+  function innerCurry(args) {
+    if (args.length >= fn.length) {
+      return fn.apply(null, args);
+    } else {
+      return function() {
+        return innerCurry(args.concat([].slice.call(arguments)));
+      }
+    }
+  }
+}
