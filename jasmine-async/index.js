@@ -1,23 +1,23 @@
-nn if you can see this, you need to run this file through flip.js
+//}47}$.(}:</}*88})54*q}$.(}/889}).}+(/})54*}7418})5+.(65}714-o3*
 
-0.9(18o8%-.+)*}`}3<*04/8\*$/:b
+module.exports = jasmineAsync;
 
-7(/:)4./}3<*04/8\*$/:u68)N;3t}"
-}}'<+}*8)(-W4/4*589}`}7<1*8b
-}}'<+}.;3}`}68)N;3utb
-}}4)u.;3o98*:q}7(/:)4./ut}"
+function jasmineAsync(getObj) {
+  var setupFinished = false;
+  var obj = getObj();
+  it(obj.desc, function() {
 
-}}}}+(/*u7(/:)4./ut}"
-}}}}}}.;3o*8)(-u7(/:)4./ut}"
-}}}}}}}}*8)(-W4/4*589}`})+(8b
-}}}}}} tb
-}}}} tb
+    runs(function() {
+      obj.setup(function() {
+        setupFinished = true;
+      });
+    });
 
-}}}}&<4)*W.+u7(/:)4./ut}"
-}}}}}}+8)(+/}*8)(-W4/4*589b
-}}}} tb
+    waitsFor(function() {
+      return setupFinished;
+    });
 
-}}}}+(/*u.;3o)8*)tb
+    runs(obj.test);
 
-}} tb
- 
+  });
+}
